@@ -1,0 +1,17 @@
+{
+    "Header":{
+        "categories":["All", "All categories", "Electronics", "Toys", "Cars"],
+        "login": "Login"
+    },
+    "Main": {
+        "fancy-title": "MORE THAN JUST A SHOP",
+        "big-title": "CHEAPEST IN THE COUNTRY",
+        "small-description": "We do our best to get the lowest prices for our costumers because we beleive that the best is for the best.",
+        "featured-products": "FEATURED PRODUCTS"
+    },
+    "Footer":{
+        "home": "Home",
+        "about": "About",
+        "faq": "FAQ"
+    }
+}
