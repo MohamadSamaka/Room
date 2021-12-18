@@ -7,7 +7,7 @@ const db = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '2000',
-    database: 'room'
+    database: 'roomwebsite'
 })
 
 app.use(
