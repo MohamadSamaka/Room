@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import './styles/App.css'
 import ProductFullInfo from './components/FullProductDescription'
 import Login from "./pages/Login";
 import Home from "./pages/Home";
@@ -10,22 +12,18 @@ export default function App(){
   const show = location.pathname === '/';
     return (
       <>
-      {show && <ProductFullInfo></ProductFullInfo>}
-            {/* <div className='wrapper active'>
-        <Wrapper/>
-        </div> */}
-        {/* <nav>
-          <Link to="/"> Home </Link>
-          <Link to="/about"> About </Link>
-          <Link to="/profile"> Profile </Link>
-        </nav> */}
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="*" element={<Error/>}/>
-          {/* <Route path="/profile/:username" element={<Profile />} />
-          <Route path="*" element={<ErrorPage />} /> */}
-        </Routes>
+        {show && <ProductFullInfo></ProductFullInfo>}
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} classNames="fade" timeout={300}>
+            <Routes location={location}>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="*" element={<Error/>}/>
+              {/* <Route path="/profile/:username" element={<Profile />} />
+              <Route path="*" element={<ErrorPage />} /> */}
+            </Routes>
+          </CSSTransition>
+      </TransitionGroup>
       </>
     );
 }
