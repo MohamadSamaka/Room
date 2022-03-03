@@ -1,7 +1,12 @@
+body.home-page{
+    background-color: white;
+    transition: background-color 300ms linear 150ms;
+
+}
+
+
 #background{
-    /* position: absolute; */
     background-size: cover !important;
-    /* width: 100%; */
 }
 
 
