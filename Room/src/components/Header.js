@@ -10,7 +10,6 @@ import '../Translation'
 import i18next from 'i18next';
 import {useNavigate} from 'react-router-dom';
 
-
 const languages = [
     {
         id : 1,
