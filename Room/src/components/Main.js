@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../styles/Main.css'
 // import '../styles/FullProductDescription.css'
 // import background from './images/background.jpg'
@@ -16,14 +16,21 @@ import Axios from 'axios';
 /*eslint-disable*/
 function Main() {
     const {t} = useTranslation();
-    React.useEffect(() => {
-    Axios.get('http://localhost:3001/api/get').then((res) => {
-        let Products = res.data.map(data => {
-            return <div className="product" key={data.Id}>
+    let Products;
+    useEffect(()=>{
+        Axios.get('http://localhost:3001/api/get').then((res) => {
+        Products = res.data.map(data => {
+            return <div className="product" key={data.Id} onClick={ShowProductDescription}>
                         <div className="thumb">
-                            {/* <a href="#"> */}
                                 <img className="product-image"src={data["ImageLink"]}></img>
-                            {/* </a>  */}
+                                <ul className='product-slider-op'>
+                                    <li>
+                                        <AddShoppingCartIcon className="add-to-cart"></AddShoppingCartIcon>
+                                    </li>
+                                    <li>
+                                        <FavoriteIcon className="add-to-wishlist"></FavoriteIcon>
+                                    </li>
+                                </ul>
                         </div>
                         <div className="product-basic-info">
                             <h4 className="product-title">{data["Title"]}</h4>
@@ -33,35 +40,15 @@ function Main() {
         })
         reactDom.render(Products, document.getElementsByClassName('products-section')[0]);
     });
-    }, []);
-    function ShowProductDescription(e) {
+        console.log("hello this is from the Main!");
+    },[])
+
+    function ShowProductDescription() {
         var DescElem = document.getElementsByClassName('product-full-info')[0];
         var MainWrapper = document.getElementsByClassName('wrapper')[0];
         DescElem.classList.replace('disable','active');
         MainWrapper.classList.replace('active', 'inactive');
-        // console.log(document.getElementsByClassName('product')[0].getAttribute('key'));
     }
-
-    React.useEffect(() => {
-        Array.from(document.getElementsByClassName('product')).forEach(product => {
-            product.addEventListener('click',ShowProductDescription);
-            // product.getElementsByTagName('img')[0].addEventListener('click',ShowProductDescription)
-        });
-
-        Array.from(document.getElementsByClassName('thumb')).forEach(thumb =>{
-            let data = [<AddShoppingCartIcon className="add-to-cart"></AddShoppingCartIcon>,
-                        <FavoriteIcon className="add-to-wishlist"></FavoriteIcon>];
-            let elem = document.createElement('ul');
-            elem.classList.add('product-slider-op');
-            data.forEach(d =>{
-                let child = document.createElement('li');
-                reactDom.render(d, child);
-                elem.appendChild(child);
-            });
-            thumb.appendChild(elem);
-        })
-        console.log("hello from this thing?");
-    ;})
 
     return(
         <main id="main">
