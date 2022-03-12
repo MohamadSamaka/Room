@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 
 export default function Login(){
     let navigate = useNavigate();
-
+    console.log("hello from login")
     useEffect(()=>{
         document.body.classList=[];
     }, [])
