@@ -1,12 +1,9 @@
-import {useNavigate} from "react-router-dom";
-
-
-
 function AddCategory(){
     return(
         <>
-            <div><span>Category Id: </span><input type="number" min="1"></input></div>
-            <div><span>Category Name: </span><input type="text"></input></div>
+            {/* <div><span>Id: </span><input type="number" min="1"></input></div> */}
+            <div><span>Name: </span><input type="text"></input></div>
+            <div><input type="submit"></input></div>
         </>
     );
 }
@@ -14,8 +11,9 @@ function AddCategory(){
 function UpdateCategory(){
     return(
         <>
-            <div><span>Category Id: </span><input type="number" min="1"></input></div>
-            <div><span>Category Name: </span><input type="text"></input></div>
+            <div><span>Id: </span><input type="number" min="1"></input></div>
+            <div><span>Name: </span><input type="text"></input></div>
+            <div><input type="submit"></input></div>
         </>
     );
 }
@@ -23,7 +21,7 @@ function UpdateCategory(){
 function RemoveCategory(){
     return(
         <>
-            <div><span>Category Id: </span><input type="text"></input></div>
+            <div><span>Id: </span><input type="text"></input></div>
             <div><input type="submit"></input></div>
         </>
     );
@@ -36,7 +34,6 @@ function ShowAllCategories(){
 }
 
 export default function CategoriesController({Target}){
-    const navigateTo = useNavigate(); 
     switch (Target) {
         case "AddCategory":
             return AddCategory();
@@ -46,7 +43,8 @@ export default function CategoriesController({Target}){
             return UpdateCategory();
         case "ShowAllCategories":
             return ShowAllCategories();
-        // default:
-        //     return undefined;
+        default:
+            console.log("no sub-path matched")
+            return null;
     }
 }

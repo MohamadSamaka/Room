@@ -18,11 +18,13 @@ function Main() {
     const {t} = useTranslation();
     let Products;
     useEffect(()=>{
-        Axios.get('http://localhost:3001/api/get').then((res) => {
+        Axios.get('http://localhost:3001/api/products')
+        .then((res) => {
         Products = res.data.map(data => {
+            let images = JSON.parse(data["Images"]);
             return <div className="product" key={data.Id} onClick={ShowProductDescription}>
                         <div className="thumb">
-                                <img className="product-image"src={data["ImageLink"]}></img>
+                                <img className="product-image"src={`http://localhost:3001/images/products/${images[0]}`}></img>
                                 <ul className='product-slider-op'>
                                     <li>
                                         <AddShoppingCartIcon className="add-to-cart"></AddShoppingCartIcon>

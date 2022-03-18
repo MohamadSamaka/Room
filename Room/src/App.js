@@ -9,6 +9,9 @@ import Admin from "./pages/Admin"
 import Home from "./pages/Home";
 import Error from "./pages/Error"
 
+// export const UserName = React.createContext('Mohamad');
+
+
 export default function App(){
   const location = useLocation();
   const show = location.pathname === '/';
@@ -21,15 +24,15 @@ export default function App(){
               <Routes location={location}>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/login" element={<Login/>}/>
-                <Route path="/admin/:username" element={<Admin/>}>
-                  <Route exact path=":target/:subtarget" element={<AdminSystem/>}/>
-                    {/* <Route path=":target" element={<DatabaseInserters/>}/> */}
+                <Route path="/admin" element={<Admin/>}>
+                  <Route path="products/:subtarget" element={<AdminSystem target={"products"}/>}/>
+                  <Route path="categories/:subtarget" element={<AdminSystem target={"categories"}/>}/>
+                  <Route path="sub-categories/:subtarget" element={<AdminSystem target={"sub-categories"}/>}/>
+                  <Route path="admins/:subtarget" element={<AdminSystem target={"admins"}/>}/>
+                  <Route path="permessions/:subtarget" element={<AdminSystem target={"permessions"}/>}/>
                 </Route>
-                {/* <Route path="/test/:target" element={<Admin/>}/> */}
                 <Route path="/404" element={<Error/>}/>
                 <Route path="*" element={<Error/>}/>
-                {/* <Route path="/profile/:username" element={<Profile />} />
-                <Route path="*" element={<ErrorPage />} /> */}
               </Routes>
             </>
           </CSSTransition>
