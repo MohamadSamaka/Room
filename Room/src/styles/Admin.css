@@ -85,6 +85,9 @@ input[type=number] {
 .control-menu .menu-item:nth-child(4) {
     animation: show 0.2s 0.8s ease 1 both;
 }
+.control-menu .menu-item:nth-child(5) {
+    animation: show 0.2s 0.9s ease 1 both;
+}
 
 
 #control-page .sub-menu{
@@ -128,6 +131,7 @@ input[type=number] {
 
 #control-page > nav div{
     position: relative;
+    z-index: 2;
 }
 
 #control-page > nav div:hover .sub-menu{
