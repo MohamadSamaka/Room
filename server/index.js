@@ -17,10 +17,12 @@ app.get('/',  (req, res) =>{
     res.send("its working ig.")
 });
 
+// making the images/pc-products and images/pc-products directory publicly accessed
 app.use('/images/products', express.static(__dirname + '/images/pc-products'));
-app.use('/images/products', express.static(__dirname + '/images/mobile-products'));
+app.use('/images/products', express.static(__dirname + '/images/pc-products'));
 
 
+// routes for api requests
 app.use("/api", require("./routes/ProductsRouter.js"))
 app.use("/api", require("./routes/CategoriesRouter.js"))
 app.use("/api", require("./routes/SubCategoriesRouter.js"))
