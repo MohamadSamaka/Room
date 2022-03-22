@@ -1,5 +1,5 @@
 import React from 'react'
-import {useParams} from "react-router-dom";
+import {useParams, Navigate} from "react-router-dom";
 import "../styles/AdminSystem.css"
 import ProductsController from "../sub-pages/AdminSystem/Products.js"
 import CategoriesController from "../sub-pages/AdminSystem/Cagegories.js"
@@ -21,7 +21,7 @@ function PageHandler(sqlTargetPage, subtarget){
             return <PermessionsController Target={subtarget}/>;  
         default:
             console.log("error occured navigating to error site");
-            return null;
+            return <Navigate to="/admin"/>
     }
 }
 
