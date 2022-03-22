@@ -16,7 +16,7 @@ function AddProduct(){
             </div>
             <div><span>SubCategory: </span>
                 <select id="slct" required="required">
-                        <option value="" disabled="disabled" selected="selected">Select option</option>
+                        <option value="" disabled="disabled" defaultValue="selected">Select option</option>
                         <option value="#">One</option>
                         <option value="#">Two</option>
                         <option value="#">Three</option>
@@ -40,7 +40,7 @@ function UpdateProduct(){
             <div><span>Title: </span><input type="text"></input></div>
             <div><span>Category: </span>
                 <select id="slct" required="required">
-                    <option value="" disabled="disabled" selected="selected">Select option</option>
+                    <option value="" disabled="disabled" defaultValue="selected">Select option</option>
                     <option value="#">One</option>
                     <option value="#">Two</option>
                     <option value="#">Three</option>
@@ -52,7 +52,7 @@ function UpdateProduct(){
             </div>
             <div><span>SubCategory: </span>
                 <select id="slct" required="required">
-                    <option value="" disabled="disabled" selected="selected">Select option</option>
+                    <option value="" disabled="disabled" defaultValue="selected">Select option</option>
                     <option value="#">One</option>
                     <option value="#">Two</option>
                     <option value="#">Three</option>

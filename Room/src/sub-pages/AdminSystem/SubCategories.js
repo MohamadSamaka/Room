@@ -4,7 +4,7 @@ function AddSubCategory(){
             {/* <div><span>Id: </span><input type="number" min="1"></input></div> */}
             <div><span>Parent Category: </span>
                 <select id="slct" required="required">
-                    <option value="" disabled="disabled" selected="selected">Select option</option>
+                    <option value="" disabled="disabled" defaultValue="selected">Select option</option>
                     <option value="#">One</option>
                     <option value="#">Two</option>
                     <option value="#">Three</option>

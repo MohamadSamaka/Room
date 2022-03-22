@@ -13,7 +13,7 @@ function RemovePermession(){
         <>
             <div><span>Name: </span>
                 <select id="slct" required="required">
-                    <option value="" disabled="disabled" selected="selected">Select option</option>
+                    <option value="" disabled="disabled" defaultValue="selected">Select option</option>
                     <option value="#">One</option>
                     <option value="#">Two</option>
                     <option value="#">Three</option>
@@ -33,7 +33,7 @@ function UpdatePermession(){
         <>
             <div><span>Name: </span>
                 <select id="slct" required="required">
-                    <option value="" disabled="disabled" selected="selected">Select option</option>
+                    <option value="" disabled="disabled" defaultValue="selected">Select option</option>
                     <option value="#">One</option>
                     <option value="#">Two</option>
                     <option value="#">Three</option>
