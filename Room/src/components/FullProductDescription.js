@@ -1,27 +1,40 @@
-import React from 'react'
+import {React, useContext} from 'react'
 import '../styles/FullProductDescription.css'
 import CloseIcon from '@mui/icons-material/Close';
+import {ApplicationContext} from '../App.js'
+
 /*eslint-disable*/
 
-function FullProductDescription(){
-    function ShowProductDescription(){
-        var DescElem = document.getElementsByClassName('product-full-info')[0];
-        var MainWrapper = document.getElementsByClassName('wrapper')[0];
-        DescElem.classList.replace('active','disable');
-        MainWrapper.classList.replace('inactive', 'active');
-    }
+
+function CloseProductDescription(){
+    var DescElem = document.getElementsByClassName('product-full-info')[0];
+    var MainWrapper = document.getElementsByClassName('wrapper')[0];
+    document.body.style.overflow = "visible";
+    DescElem.classList.replace('active','disable');
+    MainWrapper.classList.replace('inactive', 'active');
+}
+
+export function ShowProductFullInfoContainer() {
+    var DescElem = document.getElementsByClassName('product-full-info')[0];
+    var MainWrapper = document.getElementsByClassName('wrapper')[0];
+    document.body.style.overflow = "hidden";
+    DescElem.classList.replace('disable','active');
+    MainWrapper.classList.replace('active', 'inactive');
+}
+export function FullProductDescription(){
+    const clickedProduct = useContext(ApplicationContext)[1][0];
     return(
         <div className="product-full-info disable">
-            <div className="close-icon" onClick={ShowProductDescription}><CloseIcon></CloseIcon></div>
+            <div className="close-icon"><CloseIcon onClick={CloseProductDescription}></CloseIcon></div>
             <div className="content">
                 <div className="main-content">
                     <div className="product-main">
                         <div className="img-thumb">
-                            <a href="#"><img src="https://flatsometutorial.com/wp-content/uploads/2020/03/product-20-300x330-1-300x300.jpg"></img></a>
+                            <img src={`http://localhost:3001/images/products/${clickedProduct && clickedProduct.Images[0]}`} alt=""></img>
                         </div>
                         <div className="product-info-text">
-                            <h1 className="product-title">product-name</h1>
-                            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”</p>
+                            <h1 className="product-title">{clickedProduct && clickedProduct.Title}</h1>
+                            <p>{clickedProduct && clickedProduct.Description}</p>
                         </div>
                     </div>
                     <div className="product-footer">
@@ -35,5 +48,3 @@ function FullProductDescription(){
         </div>
     );
 }
-
-export default FullProductDescription;
