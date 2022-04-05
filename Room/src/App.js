@@ -9,19 +9,17 @@ import AdminSystem from './components/AdminSystem.js';
 import Admin from "./pages/Admin.js"
 import Home from "./pages/Home.js";
 import Error from "./pages/Error.js"
-import {GetAllProducts} from "./API/Get.js"
+import {ContextsValues} from "./helpers/ContextsValues.js"
 
 // export const UserName = React.createContext('Mohamad');
-export const ApplicationContext = createContext();
+export const ApplicationPublicContext = createContext();
 
 
 export default function App(){
   const location = useLocation();
-  const [currentProductsRawData, setCurrentProductsRawData] = GetAllProducts([]);
-  const [clickedProduct, setClickedProduct] = useState(null);
   const show = location.pathname === '/';
     return (
-      <ApplicationContext.Provider value= {[[currentProductsRawData, setCurrentProductsRawData],[clickedProduct, setClickedProduct]]}>
+      <ApplicationPublicContext.Provider value = {ContextsValues()}>
         {show && <FullProductDescription></FullProductDescription>}
         <TransitionGroup element={null}>
           <CSSTransition key={location.key} exit={false} classNames="fade" timeout={300}>
@@ -44,6 +42,6 @@ export default function App(){
             </>
           </CSSTransition>
       </TransitionGroup>
-      </ApplicationContext.Provider>
+      </ApplicationPublicContext.Provider>
     );
 }
