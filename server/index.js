@@ -9,8 +9,8 @@ app.use(
     })
 )
 
-app.use(bodyParser.json());
-app.use(express.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.json()) // for parsing application/json
 
 
 app.get('/',  (req, res) =>{
