@@ -4,14 +4,14 @@ import StarIcon from '@mui/icons-material/Star';
 import {useTranslation } from "react-i18next";
 import '../Translation.js'
 import ProductBasicInfoContainer from '../bluePrints/ProductBasicInfoContainer';
-import {ApplicationContext} from '../App.js'
+import {ApplicationPublicContext} from '../App.js'
 
 
 /*eslint-disable*/
 function Main() {
     const {t} = useTranslation();
-    const currentProductsRawData = useContext(ApplicationContext)[0][0];
-    const setClickedProduct = useContext(ApplicationContext)[1][1];
+    const currentProductsRawData = useContext(ApplicationPublicContext).currentProductsRawData[0];
+    const setClickedProduct = useContext(ApplicationPublicContext).clickedProduct[1];
     const [productsElemenetContainer, setproductsElemenetContainer] = useState([]);
 
     useEffect(()=>{
