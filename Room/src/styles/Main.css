@@ -30,6 +30,7 @@ body.home-page{
     position: absolute;
     background-repeat: no-repeat;
     /* background-color: rgba(0, 0, 0, 0.5); */
+    background-image: url(../images/black-white-clock.jpg);
     background-size: cover;
     top: 0;
     left: 0;
