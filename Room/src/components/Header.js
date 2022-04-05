@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import 'flag-icon-css/css/flag-icons.css';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import {useTranslation } from "react-i18next";
-import '../Translation'
+import '../Translation.js'
 import i18next from 'i18next';
 import {useNavigate} from 'react-router-dom';
 

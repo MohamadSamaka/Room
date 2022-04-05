@@ -4,7 +4,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {useTranslation } from "react-i18next";
-import '../Translation'
+import '../Translation.js'
 
 function Footer(){
     const {t} = useTranslation();

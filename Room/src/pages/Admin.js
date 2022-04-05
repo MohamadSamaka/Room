@@ -1,5 +1,5 @@
 import React from 'react'
-import {Outlet, useParams, Link, useOutletContext } from "react-router-dom";
+import {Outlet, Link} from "react-router-dom";
 import "../styles/Admin.css"
 
 
@@ -7,9 +7,8 @@ import "../styles/Admin.css"
 export default function Admin(){
     // let {username} = useParams();
     // username = username[0].toUpperCase().concat(username.substring(1, username.length)) // making first letter capictal WTF?
-    const context = useOutletContext();
+    // const context = useOutletContext();
     let username = "Mohamad";
-    let temp =  <Outlet/>;
     return(
         <div id="control-page">
             <div id="welcoming"><span>Welcome</span><span>{username}</span></div>
