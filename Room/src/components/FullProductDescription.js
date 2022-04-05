@@ -1,7 +1,7 @@
 import {React, useContext} from 'react'
 import '../styles/FullProductDescription.css'
 import CloseIcon from '@mui/icons-material/Close';
-import {ApplicationContext} from '../App.js'
+import {ApplicationPublicContext} from '../App.js'
 
 /*eslint-disable*/
 
@@ -22,7 +22,7 @@ export function ShowProductFullInfoContainer() {
     MainWrapper.classList.replace('active', 'inactive');
 }
 export function FullProductDescription(){
-    const clickedProduct = useContext(ApplicationContext)[1][0];
+    const clickedProduct = useContext(ApplicationPublicContext).clickedProduct[0];
     return(
         <div className="product-full-info disable">
             <div className="close-icon"><CloseIcon onClick={CloseProductDescription}></CloseIcon></div>
