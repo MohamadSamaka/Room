@@ -20,7 +20,7 @@ export default function ProductBasicInfoContainer(data, setClickedProduct){
             </div>
             <div className="product-basic-info">
                 <h4 className="product-title">{data["Title"]}</h4>
-                <span className="product-price">{data["Price"]}$</span>
+                <span className="product-price">{Number.parseFloat(data["Price"]).toFixed(2)}$</span>
             </div>
         </div>
     );
