@@ -38,9 +38,9 @@ textarea{
     z-index: 2;
 }
 
-#control-page > form > div:nth-child(7){
+/* #control-page > form > div:nth-child(8){
     text-align: center;
-}
+} */
 
 
 #control-page input:hover {

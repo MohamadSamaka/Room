@@ -41,10 +41,15 @@
 
  .content{
     display: flex;
-    max-width: 70%;
+    max-width: 80%;
  }
 
+.product-info-text{
+    width: 100%;
+}
+
 .main-content{
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 100px;
