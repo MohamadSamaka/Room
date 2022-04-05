@@ -5,18 +5,6 @@ import App from './App'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router} from "react-router-dom";
 
-// import ProductFullInfo from './FullProductDescription'
-
-// ReactDOM.render(
-//   <>
-//   <ProductFullInfo/>
-//   <div className='wrapper active'>
-//   <Wrapper/>
-//   </div>
-//   </>,
-//   document.getElementById("wrapper")
-// )
-
 ReactDOM.render(
   <Router>
     <App></App>
