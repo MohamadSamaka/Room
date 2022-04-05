@@ -2,12 +2,12 @@ import React from 'react'
 import {useParams, Navigate} from "react-router-dom";
 import "../styles/AdminSystem.css"
 import ProductsController from "../sub-pages/AdminSystem/Products.js"
-import CategoriesController from "../sub-pages/AdminSystem/Cagegories.js"
+import CategoriesController from "../sub-pages/AdminSystem/Categories.js"
 import AdminsController from "../sub-pages/AdminSystem/Admins.js"
-import PermessionsController from "../sub-pages/AdminSystem/Permessions.js"
+import PermessionsController from "../sub-pages/AdminSystem/Permissions.js"
 import SubCategoriesController from "../sub-pages/AdminSystem/SubCategories.js"
 
-function PageHandler(sqlTargetPage, subtarget){
+function SubPageHandler(sqlTargetPage, subtarget){
     switch (sqlTargetPage) {
         case "products":
             return <ProductsController Target={subtarget}/>   
@@ -26,12 +26,12 @@ function PageHandler(sqlTargetPage, subtarget){
 }
 
 
-export default function DatabaseInserters({target}){
+export default function SubAdminSystems({target}){
     const {subtarget} = useParams();
     console.log("hello from DataBaseInserter");
     return(
         <form className="" method="POST">
-            {PageHandler(target, subtarget, navigator)}
+            {SubPageHandler(target, subtarget, navigator)}
         </form>
     );
 }
